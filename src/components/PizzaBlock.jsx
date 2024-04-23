@@ -1,17 +1,10 @@
-import React, { useState } from "react";
+import React, {useState} from 'react';
 
-export default function PizzaBlock({
-  id,
-  imageUrl,
-  title,
-  types,
-  sizes,
-  price,
-}) {
+export default function PizzaBlock({id, imageUrl, title, types, sizes, price}) {
   const [countPizza, setCountPizza] = useState(0);
   const [pizzaSize, setPizzaSize] = useState(0);
   const [pizzaType, setPizzaType] = useState(0);
-  const pizzaName = ["тонкое", "традиционное"];
+  const pizzaName = ['тонкое', 'традиционное'];
 
   const addPizza = () => {
     setCountPizza(countPizza + 1);
@@ -28,7 +21,7 @@ export default function PizzaBlock({
               <li
                 key={index}
                 onClick={() => setPizzaType(index)}
-                className={pizzaType === index ? "active" : ""}
+                className={pizzaType === index ? 'active' : ''}
               >
                 {pizzaName[typeID]}
               </li>
@@ -39,7 +32,7 @@ export default function PizzaBlock({
               <li
                 key={index}
                 onClick={() => setPizzaSize(index)}
-                className={pizzaSize === index ? "active" : ""}
+                className={pizzaSize === index ? 'active' : ''}
               >
                 {size} см.
               </li>
@@ -49,10 +42,7 @@ export default function PizzaBlock({
         <div className="pizza-block__bottom">
           <div className="pizza-block__price">от {price} ₽</div>
 
-          <button
-            onClick={addPizza}
-            className="button button--outline button--add"
-          >
+          <button onClick={addPizza} className="button button--outline button--add">
             <svg
               width="12"
               height="12"

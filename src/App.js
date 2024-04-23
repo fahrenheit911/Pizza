@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { Categories, Header, PizzaBlock, Sort } from "./components";
-import pizzas from "./assets/pizzas.json";
+import {Categories, Header, PizzaBlock, Sort} from './components';
+import pizzas from './assets/pizzas.json';
 
-const items = ["Мясная", "Вегитарианская", "Гриль", "Острые", "Закрытые"];
+const categories = ['Мясная', 'Вегитарианская', 'Гриль', 'Острые', 'Закрытые'];
 
 function App() {
   return (
@@ -12,13 +12,13 @@ function App() {
       <div className="content">
         <div className="container">
           <div className="content__top">
-            <Categories items={items} />
+            <Categories categories={categories} />
             <Sort />
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
-            {pizzas.map((obj) => (
-              <PizzaBlock {...obj} />
+            {pizzas.map(obj => (
+              <PizzaBlock key={obj.id} {...obj} />
             ))}
           </div>
         </div>
